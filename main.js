@@ -26,8 +26,13 @@ function addToList() {
 
     const check = document.createElement("button")
     check.innerHTML = "check"
-    check.classList.add("check")
+    check.classList.add('check')
     items.appendChild(check)
+
+    const trash = document.createElement("button")
+    trash.innerHTML = "trash"
+    trash.classList.add('trash')
+    items.appendChild(trash)
 
 
     listToDo.appendChild(items)
@@ -47,8 +52,15 @@ function checkOrDel(event) {
     if (item.classList[0] === 'check') {
         const list = item.parentElement
         list.classList.toggle('chk')
-        console.log("item checked")
+        
     } 
+    
+    // deleting
+
+    if (item.classList[0] === 'trash') {
+        const list = item.parentElement
+        list.remove()
+    }
     
 }
 
