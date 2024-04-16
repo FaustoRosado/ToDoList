@@ -20,6 +20,10 @@ function addToList() {
     item.innerText = inputToDo.value
     items.appendChild(item)
 
+    if (inputToDo === '') return
+
+    listToDo.appendChild(items)
+    inputToDo.value = ''
 
 }
 
