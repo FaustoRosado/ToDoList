@@ -1,11 +1,11 @@
 // set constant variables
 
-const inputToDo = document.querySelector(".text")
-const buttonToDo = document.querySelector(".button-input")
-const listToDo = document.querySelector(".todo")
+const inputToDo = document.querySelector('.text')
+const buttonToDo = document.querySelector('.button-input')
+const listToDo = document.querySelector('.todo')
 
-function buttonClick(e) {
-    e.preventDefault()
+function buttonClick(event) {
+    event.preventDefault()
     addToList()
 }
 
@@ -13,7 +13,7 @@ function buttonClick(e) {
 
 function addToList() {
     const items = document.createElement('div')
-    items.classList.add('items')
+    items.classList.add('item-container')
 
     const item = document.createElement('p')
     item.classList.add('item')
@@ -25,14 +25,9 @@ function addToList() {
     // check button
 
     const check = document.createElement("button")
-    //check.innerHTML = 
+    check.innerHTML = "check"
     check.classList.add("check")
     items.appendChild(check)
-
-    const trash = document.createElement("button")
-    //trash.innerHTML =
-    trash.classList.add("trash")
-    items.appendChild(trash)
 
 
     listToDo.appendChild(items)
@@ -40,5 +35,23 @@ function addToList() {
 
 }
 
+
 // toDoList checking & deleting
+
+function checkOrDel(event) {
+    // target the item
+    const item = event.target
+
+    // checking
+
+    if (item.classList[0] === 'check') {
+        const list = item.parentElement
+        list.classList.toggle('chk')
+        console.log("item checked")
+    } 
+    
+}
+
+buttonToDo.addEventListener('click', buttonClick)
+listToDo.addEventListener('click', checkOrDel)
 
