@@ -22,8 +22,23 @@ function addToList() {
 
     if (inputToDo === '') return
 
+    // check button
+
+    const check = document.createElement("button")
+    //check.innerHTML = 
+    check.classList.add("check")
+    items.appendChild(check)
+
+    const trash = document.createElement("button")
+    //trash.innerHTML =
+    trash.classList.add("trash")
+    items.appendChild(trash)
+
+
     listToDo.appendChild(items)
     inputToDo.value = ''
 
 }
+
+// toDoList checking & deleting
 
