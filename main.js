@@ -20,17 +20,20 @@ function addToList() {
     item.innerText = inputToDo.value
     items.appendChild(item)
 
-    if (inputToDo === '') return
+    if (inputToDo.value === '') 
+        return
 
     // check button
 
     const check = document.createElement("button")
-    check.innerHTML = "check"
+    // check.innerHTML = "check"
+    check.innerHTML = '<i class="fa-solid fa-list-check"></i>'
     check.classList.add('check')
     items.appendChild(check)
 
     const trash = document.createElement("button")
-    trash.innerHTML = "trash"
+    // trash.innerHTML = "trash"
+    trash.innerHTML = '<i class="fa-regular fa-trash-can"></i>'
     trash.classList.add('trash')
     items.appendChild(trash)
 
